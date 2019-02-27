@@ -1,0 +1,28 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+<main class="container" role="main">
+    {{ range .Data.Pages }}
+        <div class="jumbotron py-3 mb-3 mt-3" id="jumbotron">
+            <div class="row">
+            <div class="col-9">
+                <h2>
+                    <a class="text-light" href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+            </div>
+            <div class="col-3 text-info float-right">
+                <small>published on {{ .Date.Format "02 Jan 06 15:04 MST" }}</small>
+            </div>
+        </div>
+        <div class="border-top my-3"></div>
+        <div class="row">
+            
+            <div class="col-12 text-light">
+                {{ .Summary }}
+            </div>
+        </div>
+        </div>
+    {{ end }}
+</main>
+
+{{ partial "footer" . }}

@@ -1,0 +1,14 @@
+# https://github.com/gohugoio/hugoThemes#themetoml
+
+name = "Hugo Theme Lauwarm"
+license = "MIT"
+licenselink = "https://github.com/lauwarm/hugo-theme-lauwarm/blob/master/LICENSE"
+description = "A simple Hugo theme made with Bootstrap"
+homepage = "https://github.com/lauwarm/hugo-theme-lauwarm"
+tags = ["blog", "bootstrap", "font awesome"]
+features = ["blog", "gallery", "tags", "rss"]
+min_version = "0.41"
+
+[author]
+  name = "Fabian"
+  homepage = "lauwarm.github.io"

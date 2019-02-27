@@ -1,0 +1,14 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+{{ if eq .Type "page" }}
+	{{ partial "page.html" . }}
+{{ else if eq .Type "gallery" }}
+	{{ partial "gallery.html" . }}
+{{ else if eq .Type "general" }}
+	{{ partial "general.html" . }}
+{{ else }}
+	{{ partial "article.html" . }}
+{{ end }}
+
+{{ partial "footer.html" . }}

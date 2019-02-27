@@ -1,0 +1,34 @@
+<main class="container" role="main">
+    <div class="jumbotron py-3 mb-3 mt-3" id="jumbotron-article">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-light">{{ .Title }}</h1>
+            </div>
+            <div class="col-4 text-info">
+                <small>published on {{ .Date.Format "02 Jan 06 15:04 MST" }}</small> 
+            </div>
+            <div class="col-8">
+                <div class="flex-row-reverse row">
+                    <small>
+                        {{ if isset .Params "tags" }}
+                        {{ $baseURL := .Site.BaseURL }}
+                        {{ range .Params.tags }}
+                            <a class="badge badge-info ml-1" href="{{ $baseURL }}tags/{{ . | urlize }}/">{{ . }}</a>
+                        {{ end }}
+                        {{ end }}
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-top my-3"></div>
+    </div>
+    <div class="jumbotron py-3 mb-3 mt-3" id="jumbotron-article">
+        <div class="text-light">
+                {{ .Content }}
+        </div>
+    </div>
+
+
+</main>
+

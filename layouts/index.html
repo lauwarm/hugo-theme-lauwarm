@@ -1,0 +1,41 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+<main class="container" role="main">
+
+        {{ range .Data.Pages }}
+        {{ if or (eq .Type "article") (eq .Type "gallery") }}
+        <div class="jumbotron py-3 mb-3 mt-3" id="jumbotron" >
+          <div class="row">
+            <div class="col-12 row-main-title">
+              <h2>
+                <a class="text-light" href={{ .Permalink }}>{{ .Title  }}</a>
+              </h2>
+            </div>
+          
+            <div class="col-4 float-right text-info">
+              <small>
+                published on {{ .Date.Format "02 Jan 06 15:04 MST" }}
+              </small>
+            </div>
+          
+            <div class="col-8 float-right">
+              <div class="row flex-row-reverse " >
+                {{ if isset .Params "tags" }}
+                {{ $baseURL := .Site.BaseURL }}
+                {{ range .Params.tags }}
+                <small>
+                  <a class="badge badge-info ml-1" href="{{ $baseURL }}tags/{{ . | urlize }}/">{{ . }}</a>
+                </small>
+                {{ end }}
+                {{ end }}
+              </div>
+            </div>
+
+          </div>
+        </div>
+        {{ end }}
+        {{ end }}
+</main>
+
+{{ partial "footer.html" . }}

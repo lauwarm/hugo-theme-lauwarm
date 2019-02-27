@@ -1,0 +1,21 @@
+<!-- Header -->
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+<main class="container" role="main">
+    <div class="jumbotron py-3 mb-3 mt-3" id="jumbotron">
+        <div class="row ">
+            {{ $data := .Data }}
+            {{ range $key, $value := .Data.Terms }}
+
+            <div class="col">
+                <a class="text-light" href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a>
+            </div>
+
+            {{ end }}
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+{{ partial "footer.html" . }}
